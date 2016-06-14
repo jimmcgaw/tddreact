@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/.setup.js test/**/*.test.js"
+    "test": "jest && mocha test/.setup.js test/**/*.test.js"
   },
   "keywords": [],
   "author": "",
@@ -19,13 +19,25 @@
     "babel": "^6.5.2",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
+    "babel-jest": "^12.1.0",
     "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
+    "jest-cli": "^12.1.1",
     "jsdom": "^9.2.1",
     "mocha": "^2.5.3",
     "react-addons-test-utils": "^15.1.0",
     "webpack": "^1.13.1"
+  },
+  "jest": {
+    "testDirectoryName": "jest",
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react/",
+      "<rootDir>/node_modules/react-dom/",
+      "<rootDir>/node_modules/react-addons-test-utils/"
+    ]
   }
 }
